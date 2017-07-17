@@ -1,10 +1,15 @@
-Topological sorting for Directed Acyclic Graph (DAG) is a linear ordering of vertices such that for every directed edge uv, vertex u comes before v in the ordering. Topological Sorting for a graph is not possible if the graph is not a DAG.
+Topological sorting for Directed Acyclic Graph (DAG) is a linear ordering of vertices 
+such that for every directed edge uv, vertex u comes before v in the ordering. 
+Topological Sorting for a graph is not possible if the graph is not a DAG.
 
   
   
   First algorithm:
   
-    First described by Kahn (1962), works by choosing vertices in the same order as the eventual topological sort. First, find a list of "start nodes" which have no incoming edges and insert them into a set S; at least one such node must exist in a non-empty acyclic graph. Then:
+    First described by Kahn (1962), works by choosing vertices in the same order 
+    as the eventual topological sort. First, find a list of "start nodes" which 
+    have no incoming edges and insert them into a set S; at least one such node 
+    must exist in a non-empty acyclic graph. Then:
 
          L ← Empty list that will contain the sorted elements
 
@@ -40,7 +45,10 @@ Code for this algo can be found in toposort.cpp file.
 
  Second algorithm:
 
-    An alternative algorithm for topological sorting is based on depth-first search. The algorithm loops through each node of the graph, in an arbitrary order, initiating a depth-first search that terminates when it hits any node that has already been visited since the beginning of the topological sort or the node has no outgoing edges (i.e. a leaf node):
+    An alternative algorithm for topological sorting is based on depth-first search. 
+    The algorithm loops through each node of the graph, in an arbitrary order, 
+    initiating a depth-first search that terminates when it hits any node that has already been visited 
+    since the beginning of the topological sort or the node has no outgoing edges (i.e. a leaf node):
 
         L ← Empty list that will contain the sorted nodes
         while there are unmarked nodes do
