@@ -5,7 +5,7 @@ using namespace std;
 
 vector<int>g[mx];
 int visited[mx];
-vector<int>s;
+stack<int>s;
 void dfs(int u)
 {
     visited[u]=1;
@@ -14,7 +14,7 @@ void dfs(int u)
         int v=g[u][i];
         if(visited[v]==0) dfs(v);
     }
-    s.push_back(u);
+    s.push(u);
 }
 int main()
 {
@@ -36,9 +36,11 @@ int main()
     }
 
     for(int i=0; i<n; i++)
-    {
+    {    
+        int x=s.top();
+         x.pop();
 
-        cout<<s[i]<<" ";
+        cout<<x<" ";
 
     }
     cout<<endl;
